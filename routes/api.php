@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('articles','Articles@articles');
+Route::get('articles/{id}/comments','Articles@comments');
+Route::get('tags','Articles@tags');
+Route::get('tags/{id}/articles','Articles@articlesByTag');
